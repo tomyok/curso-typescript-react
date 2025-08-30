@@ -1,13 +1,22 @@
-function Button() {
+type ButtonProps = {
+  text: string;
+  subtitle?: string;
+  color?: string;
+}
+
+function Button(props: ButtonProps) {
+
+const {text} = props;
+
   return (
-    <button className="btn">Click me</button>
+    <button className="btn">{text}</button>
   )
 }
 
 function page() {
   return (
     <div>
-      <Button />
+      <Button text="Hello World"/>
     </div>
   )
 }
