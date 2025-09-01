@@ -1,25 +1,23 @@
-type Color = "red" | "blue" | "green";
+type Numbers = 2 | 3 | 4;
 
 type ButtonProps = {
-  text: string;
-  subtitle?: string;
-  color?: Color;
+  //padding: number[]
+  //padding: [number, number, number?]
+  padding: [Numbers]
 }
 
-function Button(props: ButtonProps) {
+function Button({padding}: ButtonProps) {
 
-const {text} = props;
 
   return (
-    <button className="btn">{text}</button>
+    <button className="btn">{padding}</button>
   )
 }
 
 function page() {
   return (
     <div>
-      <Button text="Hello World"
-      color="red"
+      <Button padding={[3]}
       />
     </div>
   )
