@@ -1,23 +1,24 @@
 type ButtonProps = {
-  backgroundColor?: string;
-  color: string;
+  style: React.CSSProperties;
   text: string;
 }
 
-function Button({backgroundColor, color, text}: ButtonProps) {
+function Button({style, text}: ButtonProps) {
 
   return (
-    <button className="btn" style={{
-      backgroundColor,
-      color
-    }}>{text}</button>
+    <button className="btn" style={style}>{text}</button>
   )
 }
 
 function page() {
   return (
     <div>
-      <Button backgroundColor="red" color="blue" text="Hello World"
+      <Button style={{
+        backgroundColor:"red",
+        color:"blue",
+        fontSize:"50px"
+      }}
+      text="Hello World"
       />
     </div>
   )
