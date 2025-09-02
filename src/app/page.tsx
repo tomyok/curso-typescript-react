@@ -1,23 +1,23 @@
-type Numbers = 2 | 3 | 4;
-
 type ButtonProps = {
-  //padding: number[]
-  //padding: [number, number, number?]
-  padding: [Numbers]
+  backgroundColor?: string;
+  color: string;
+  text: string;
 }
 
-function Button({padding}: ButtonProps) {
-
+function Button({backgroundColor, color, text}: ButtonProps) {
 
   return (
-    <button className="btn">{padding}</button>
+    <button className="btn" style={{
+      backgroundColor,
+      color
+    }}>{text}</button>
   )
 }
 
 function page() {
   return (
     <div>
-      <Button padding={[3]}
+      <Button backgroundColor="red" color="blue" text="Hello World"
       />
     </div>
   )
