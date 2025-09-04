@@ -1,22 +1,23 @@
 type ButtonProps = {
-  style: React.CSSProperties;
+  userAges: Record<"jorge" | "bob" | "alice",number>
   text: string;
 }
 
-function Button({style, text}: ButtonProps) {
+function Button({text}: ButtonProps) {
 
   return (
-    <button className="btn" style={style}>{text}</button>
+    <button className="btn">{text}</button>
   )
 }
 
 function page() {
   return (
     <div>
-      <Button style={{
-        backgroundColor:"red",
-        color:"blue",
-        fontSize:"50px"
+      <Button 
+      userAges={{
+        alice: 20,
+        bob: 23,
+        jorge: 21
       }}
       text="Hello World"
       />
