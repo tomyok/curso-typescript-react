@@ -1,26 +1,22 @@
 "use client"
 
 type ButtonProps = {
-  onClick: () => void;
-  text: string;
+  children: React.ReactNode;
 }
 
-function Button({text, onClick}: ButtonProps) {
+function Button({children}: ButtonProps) {
 
   return (
-    <button className="btn" onClick={onClick}>{text}</button>
+    <button className="btn">Hello World</button>
   )
 }
 
 function page() {
   return (
     <div>
-      <Button 
-      onClick={() => {
-        alert('Funciona!')
-      }}
-      text="Hello World"
-      />
+      <Button>
+        Hola
+      </Button>
     </div>
   )
 }
