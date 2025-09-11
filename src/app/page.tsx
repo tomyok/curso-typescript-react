@@ -1,22 +1,28 @@
 "use client"
 
+import { Dispatch, SetStateAction, useState } from "react"
+
 type ButtonProps = {
-  children: React.ReactNode;
+setCount: Dispatch<SetStateAction<number>>;
 }
 
-function Button({children}: ButtonProps) {
+function Button({setCount}: ButtonProps) {
 
   return (
-    <button className="btn">Hello World</button>
+    <button className="btn" onClick={() => setCount(10)}>Hello</button>
   )
 }
 
 function page() {
+
+  const [count, setCount] = useState(0)
+
   return (
     <div>
-      <Button>
-        Hola
-      </Button>
+      <h1>{count}</h1>
+      <Button
+        setCount={setCount}
+      />
     </div>
   )
 }
