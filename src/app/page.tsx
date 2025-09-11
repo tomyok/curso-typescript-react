@@ -1,12 +1,14 @@
+"use client"
+
 type ButtonProps = {
-  userAges: Record<"jorge" | "bob" | "alice",number>
+  onClick: () => void;
   text: string;
 }
 
-function Button({text}: ButtonProps) {
+function Button({text, onClick}: ButtonProps) {
 
   return (
-    <button className="btn">{text}</button>
+    <button className="btn" onClick={onClick}>{text}</button>
   )
 }
 
@@ -14,10 +16,8 @@ function page() {
   return (
     <div>
       <Button 
-      userAges={{
-        alice: 20,
-        bob: 23,
-        jorge: 21
+      onClick={() => {
+        alert('Funciona!')
       }}
       text="Hello World"
       />
