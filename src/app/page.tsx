@@ -1,22 +1,28 @@
 "use client"
 
-type ButtonProps = {
-  title?: string;
+// type ButtonProps = {
+//   title?: string;
+// }
+
+// type Domain = string;
+
+interface Domain {
+domain: string;
 }
 
-function Button({title = "Hello"}: ButtonProps) {
+function Button({domain}: Domain) {
 
   return (
-    <button className="btn">{title}</button>
+    <button className="btn">{domain}</button>
   )
 }
 
 function page() {
 
-
   return (
     <div>
       <Button
+      domain = "hola"
       />
     </div>
   )
