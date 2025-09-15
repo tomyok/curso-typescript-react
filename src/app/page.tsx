@@ -1,19 +1,13 @@
 "use client"
 
-// type ButtonProps = {
-//   title?: string;
-// }
+import { ComponentPropsWithoutRef } from "react"
 
-// type Domain = string;
+type ButtonProps = ComponentPropsWithoutRef<"button">
 
-interface Domain {
-domain: string;
-}
-
-function Button({domain}: Domain) {
+function Button({ }: ButtonProps) {
 
   return (
-    <button className="btn">{domain}</button>
+    <button className="btn">{}</button>
   )
 }
 
@@ -21,9 +15,7 @@ function page() {
 
   return (
     <div>
-      <Button
-      domain = "hola"
-      />
+      <Button/>
     </div>
   )
 }
